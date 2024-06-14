@@ -39,4 +39,6 @@ function __complete_{{ .App.HelpName }}_console
 end
 
 complete -f -c '{{ .App.HelpName }}' -n "__fish_seen_subcommand_from console" -a '(__complete_{{ .App.HelpName }}_console)' -f
+complete -f -c '{{ .App.HelpName }}' -n "__fish_seen_subcommand_from php pecl composer" -a '(__fish_complete_subcommand)'
+complete -f -c '{{ .App.HelpName }}' -n "__fish_seen_subcommand_from run local:run" -a '(__fish_complete_subcommand --fcs-skip=2)'
 complete -f -c '{{ .App.HelpName }}' -n "not __fish_seen_subcommand_from console php pecl composer run local:run" -a '(__complete_{{ .App.HelpName }})'
